@@ -1,0 +1,6 @@
+framework module Pods_CMPE137_Lab2 {
+  umbrella header "Pods-CMPE137_Lab2-umbrella.h"
+
+  export *
+  module * { export * }
+}
