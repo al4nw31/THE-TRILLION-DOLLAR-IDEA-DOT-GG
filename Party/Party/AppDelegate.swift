@@ -16,6 +16,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+        
+        // Create UIWindow within the screen boundaries.
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        var nav1 = UINavigationController()
+        var first = FirstViewController(nibName: nil, bundle: nil)
+        nav1.viewControllers = [first]
+        nav1.tabBarItem = UITabBarItem(title: "Nav1", image: UIImage(named:"IconNav1"), tag: 1)
+        
+        var nav2 = UINavigationController()
+        var second = SecondViewController(nibName: nil, bundle: nil)
+        nav2.viewControllers = [second]
+        nav2.tabBarItem = UITabBarItem(title: "Nav2", image: UIImage(named:"IconNav2"), tag: 1)
+        
+        var nav3 = UINavigationController()
+        var third = ThirdViewController(nibName: nil, bundle: nil)
+        nav3.viewControllers = [third]
+        nav3.tabBarItem = UITabBarItem(title: "Nav3", image: UIImage(named:"IconNav3"), tag: 1)
+        
+        var tabs = UITabBarController()
+        tabs.viewControllers = [nav1, nav2, nav3]
+        
+        self.window!.rootViewController = tabs;
+        self.window?.makeKeyAndVisible();
+        
         return true
     }
 
@@ -43,4 +69,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
+
 
