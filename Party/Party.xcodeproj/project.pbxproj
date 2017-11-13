@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		107C51111FB9898F002E93CD /* LabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107C51101FB9898F002E93CD /* LabelFactory.swift */; };
+		107C51131FB98A63002E93CD /* ButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107C51121FB98A63002E93CD /* ButtonFactory.swift */; };
+		107C51151FB98A9A002E93CD /* ImageViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107C51141FB98A9A002E93CD /* ImageViewFactory.swift */; };
+		107C51171FB98ADC002E93CD /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107C51161FB98ADC002E93CD /* BaseView.swift */; };
+		107C51191FB98BFF002E93CD /* EventCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107C51181FB98BFF002E93CD /* EventCard.swift */; };
+		107C511B1FB98D31002E93CD /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107C511A1FB98D31002E93CD /* ButtonsView.swift */; };
+		107C511D1FB98FB5002E93CD /* Swipeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107C511C1FB98FB5002E93CD /* Swipeable.swift */; };
 		89F6E74F1F9EDE4E00E7E7D3 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F6E74E1F9EDE4E00E7E7D3 /* SecondViewController.swift */; };
 		89F6E7511F9EDE6300E7E7D3 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F6E7501F9EDE6300E7E7D3 /* ThirdViewController.swift */; };
 		E70F91251F9ED4B000B6A84D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70F91241F9ED4B000B6A84D /* AppDelegate.swift */; };
@@ -17,6 +24,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		107C51101FB9898F002E93CD /* LabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFactory.swift; sourceTree = "<group>"; };
+		107C51121FB98A63002E93CD /* ButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactory.swift; sourceTree = "<group>"; };
+		107C51141FB98A9A002E93CD /* ImageViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewFactory.swift; sourceTree = "<group>"; };
+		107C51161FB98ADC002E93CD /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		107C51181FB98BFF002E93CD /* EventCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCard.swift; sourceTree = "<group>"; };
+		107C511A1FB98D31002E93CD /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
+		107C511C1FB98FB5002E93CD /* Swipeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swipeable.swift; sourceTree = "<group>"; };
 		89F6E74E1F9EDE4E00E7E7D3 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		89F6E7501F9EDE6300E7E7D3 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		E70F91211F9ED4B000B6A84D /* Party.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Party.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,8 +73,15 @@
 			isa = PBXGroup;
 			children = (
 				E70F91241F9ED4B000B6A84D /* AppDelegate.swift */,
+				107C51101FB9898F002E93CD /* LabelFactory.swift */,
+				107C51121FB98A63002E93CD /* ButtonFactory.swift */,
+				107C51141FB98A9A002E93CD /* ImageViewFactory.swift */,
+				107C51161FB98ADC002E93CD /* BaseView.swift */,
+				107C51181FB98BFF002E93CD /* EventCard.swift */,
+				107C511A1FB98D31002E93CD /* ButtonsView.swift */,
 				89F6E7501F9EDE6300E7E7D3 /* ThirdViewController.swift */,
 				89F6E74E1F9EDE4E00E7E7D3 /* SecondViewController.swift */,
+				107C511C1FB98FB5002E93CD /* Swipeable.swift */,
 				E70F91261F9ED4B000B6A84D /* FirstViewController.swift */,
 				E70F91281F9ED4B000B6A84D /* Main.storyboard */,
 				E70F912B1F9ED4B000B6A84D /* Assets.xcassets */,
@@ -142,10 +163,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				107C51131FB98A63002E93CD /* ButtonFactory.swift in Sources */,
 				89F6E74F1F9EDE4E00E7E7D3 /* SecondViewController.swift in Sources */,
 				89F6E7511F9EDE6300E7E7D3 /* ThirdViewController.swift in Sources */,
 				E70F91271F9ED4B000B6A84D /* FirstViewController.swift in Sources */,
+				107C51151FB98A9A002E93CD /* ImageViewFactory.swift in Sources */,
+				107C51111FB9898F002E93CD /* LabelFactory.swift in Sources */,
+				107C511B1FB98D31002E93CD /* ButtonsView.swift in Sources */,
+				107C511D1FB98FB5002E93CD /* Swipeable.swift in Sources */,
 				E70F91251F9ED4B000B6A84D /* AppDelegate.swift in Sources */,
+				107C51191FB98BFF002E93CD /* EventCard.swift in Sources */,
+				107C51171FB98ADC002E93CD /* BaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
