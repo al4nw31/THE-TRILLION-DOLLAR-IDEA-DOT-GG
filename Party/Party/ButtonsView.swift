@@ -21,14 +21,14 @@ class ButtonsView: BaseView {
         return b
     }()
     
-    lazy var superLikeButton: UIButton = {
-        let b = ButtonFactory.buttonWithImage(image: #imageLiteral(resourceName: "superlike"), cornerRadius: 0, target: self, selector: #selector(superLike), sizeToFit: true).new
+    lazy var mapButton: UIButton = {
+        let b = ButtonFactory.buttonWithImage(image: #imageLiteral(resourceName: "map"), cornerRadius: 0, target: self, selector: #selector(map), sizeToFit: true).new
         return b
     }()
     
     lazy var container: UIStackView = {
         let c = UIStackView(arrangedSubviews: [
-            self.likeButton, self.passButton, self.superLikeButton
+            self.likeButton, self.passButton, self.mapButton
             ])
         c.translatesAutoresizingMaskIntoConstraints = false
         c.spacing = 20
@@ -54,13 +54,11 @@ class ButtonsView: BaseView {
     }
     
     @objc func pass() {
-        
         print("pass print")
     }
     
-    @objc func superLike() {
-        print("super like print")
+    @objc func map() {
+        print("map print")
     }
-    
     
 }

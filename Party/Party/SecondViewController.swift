@@ -33,7 +33,7 @@ class SecondViewController: UIViewController {
         view.addSubview(buttonsContainer)
         
         NSLayoutConstraint.activate([
-            eventCard.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 20),
+            eventCard.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 10),
             eventCard.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
             eventCard.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             eventCard.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.70),

@@ -11,9 +11,16 @@ import UIKit
 
 class EventCard: BaseView {
     
-    let profileImageView = ImageViewFactory.standardImageView(image: #imageLiteral(resourceName: "jynerso"), cornerRadius: 0, interactionEnabled: true, contentMode: .scaleAspectFill, sizeToFit: false).new
+    let eventImageView = ImageViewFactory.standardImageView(image: #imageLiteral(resourceName: "ssbm"), cornerRadius: 0, interactionEnabled: true, contentMode: .scaleAspectFill, sizeToFit: false).new
     
-    let friendsIconView = ImageViewFactory.standardImageView(image: #imageLiteral(resourceName: "friendsIcon"), cornerRadius: 0, interactionEnabled: false, contentMode: .scaleAspectFill, sizeToFit: false).new
+    lazy var websiteButton: UIButton = {
+        let b = ButtonFactory.buttonWithImage(image: #imageLiteral(resourceName: "friendsIcon"), cornerRadius: 0, target: self, selector: #selector(website), sizeToFit: true).new
+        return b
+    }()
+    
+    @objc func website() {
+        print("website print")
+    }
     
     let containerView: BaseView = {
         let v = BaseView()
@@ -30,50 +37,54 @@ class EventCard: BaseView {
         return v
     }()
     
-    let nameLabel = LabelFactory.standardLabel(text: "Jyn Erso", textColor: .gray, fontStyle: .headline, textAlignment: .left, sizeToFit: true, adjustToFit: true).new
+    let nameLabel = LabelFactory.standardLabel(text: "Super Smash Bros Melee Lan Party!", textColor: .gray, fontStyle: .headline, textAlignment: .left, sizeToFit: true, adjustToFit: true).new
     
-    let workLabel = LabelFactory.standardLabel(text: "Member of the Alliance to Restore the Republic", textColor: .gray, fontStyle: .subheadline, textAlignment: .left, sizeToFit: true, adjustToFit: true).new
+    let dateLabel = LabelFactory.standardLabel(text: "4:00 P.M 11/31", textColor: .gray, fontStyle: .subheadline, textAlignment: .left, sizeToFit: true, adjustToFit: true).new
+    
+    let descriptionLabel = LabelFactory.standardLabel(text: "4th Floor MLK", textColor: .gray, fontStyle: .subheadline, textAlignment: .left, sizeToFit: true, adjustToFit: true).new
     
     override func setUpViews() {
         
         addSubview(containerView)
-        containerView.addSubview(profileImageView)
+        containerView.addSubview(eventImageView)
         containerView.addSubview(infoContainerView)
         infoContainerView.addSubview(nameLabel)
-        infoContainerView.addSubview(workLabel)
-        infoContainerView.addSubview(friendsIconView)
+        infoContainerView.addSubview(dateLabel)
+        infoContainerView.addSubview(descriptionLabel)
+        infoContainerView.addSubview(websiteButton)
         
         let infoContainerViewMargins = infoContainerView.layoutMarginsGuide
         
         NSLayoutConstraint.activate([
-            
             containerView.topAnchor.constraint(equalTo: topAnchor),
             containerView.leadingAnchor.constraint(equalTo: leadingAnchor),
             containerView.widthAnchor.constraint(equalTo: widthAnchor),
             containerView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            profileImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-            profileImageView.topAnchor.constraint(equalTo: containerView.topAnchor),
-            profileImageView.widthAnchor.constraint(equalTo: containerView.widthAnchor),
-            profileImageView.heightAnchor.constraint(equalTo: containerView.heightAnchor, multiplier: 0.85),
+            eventImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            eventImageView.topAnchor.constraint(equalTo: containerView.topAnchor),
+            eventImageView.widthAnchor.constraint(equalTo: containerView.widthAnchor),
+            eventImageView.heightAnchor.constraint(equalTo: containerView.heightAnchor, multiplier: 0.85),
             
-            infoContainerView.topAnchor.constraint(equalTo: profileImageView.bottomAnchor),
+            infoContainerView.topAnchor.constraint(equalTo: eventImageView.bottomAnchor),
             infoContainerView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
             infoContainerView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
             infoContainerView.widthAnchor.constraint(equalTo: containerView.widthAnchor),
             
-            friendsIconView.centerYAnchor.constraint(equalTo: infoContainerViewMargins.centerYAnchor),
-            friendsIconView.heightAnchor.constraint(equalTo: infoContainerViewMargins.heightAnchor, multiplier: 0.7),
-            friendsIconView.widthAnchor.constraint(equalTo: friendsIconView.heightAnchor),
-            friendsIconView.trailingAnchor.constraint(equalTo: infoContainerViewMargins.trailingAnchor),
+            websiteButton.centerYAnchor.constraint(equalTo: infoContainerViewMargins.centerYAnchor),
+            websiteButton.heightAnchor.constraint(equalTo: infoContainerViewMargins.heightAnchor, multiplier: 0.7),
+            websiteButton.widthAnchor.constraint(equalTo: websiteButton.heightAnchor),
+            websiteButton.trailingAnchor.constraint(equalTo: infoContainerViewMargins.trailingAnchor),
             
             nameLabel.leadingAnchor.constraint(equalTo: infoContainerViewMargins.leadingAnchor),
             nameLabel.topAnchor.constraint(equalTo: infoContainerViewMargins.topAnchor),
             
-            workLabel.leadingAnchor.constraint(equalTo: infoContainerViewMargins.leadingAnchor),
-            workLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor),
-            workLabel.trailingAnchor.constraint(equalTo: friendsIconView.leadingAnchor, constant: -20)
+            dateLabel.leadingAnchor.constraint(equalTo: infoContainerViewMargins.leadingAnchor),
+            dateLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor),
             
+            descriptionLabel.leadingAnchor.constraint(equalTo: infoContainerViewMargins.leadingAnchor),
+            descriptionLabel.topAnchor.constraint(equalTo: dateLabel.bottomAnchor),
+            descriptionLabel.trailingAnchor.constraint(equalTo: websiteButton.leadingAnchor, constant: -20)
             ])
     }
 }
