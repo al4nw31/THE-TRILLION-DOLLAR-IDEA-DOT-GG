@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var nav2 = UINavigationController()
         var second = SecondViewController(nibName: nil, bundle: nil)
         nav2.viewControllers = [second]
-        nav2.tabBarItem = UITabBarItem(title: "Nav2", image: UIImage(named:"IconNav2"), tag: 1)
+        nav2.tabBarItem = UITabBarItem(title: "Events", image: UIImage(named:"IconNav2"), tag: 1)
         
         var nav3 = UINavigationController()
         var third = ThirdViewController(nibName: nil, bundle: nil)

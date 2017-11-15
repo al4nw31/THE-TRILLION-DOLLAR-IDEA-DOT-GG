@@ -10,9 +10,9 @@ import Foundation
 
 class ThirdViewController: UIViewController {
     
-    var mName = "Richard"
-    var mLoc = "San Jose"
-    var mDesc = "I like to play games"
+    var mName = "Bob Saget"
+    var mLoc = "San Fransisco"
+    var mDesc = "Everywhere You Look"
     
     let txtField = UITextField(frame: CGRect(x:100,y:230,width:200,height:30))
     let txtField2 = UITextField(frame: CGRect(x:100,y:310,width:200,height:30))
