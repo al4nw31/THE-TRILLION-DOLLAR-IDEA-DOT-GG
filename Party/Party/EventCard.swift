@@ -37,11 +37,11 @@ class EventCard: BaseView {
         return v
     }()
     
-    let nameLabel = LabelFactory.standardLabel(text: "Super Smash Bros Melee Lan Party!", textColor: .gray, fontStyle: .headline, textAlignment: .left, sizeToFit: true, adjustToFit: true).new
+    let nameLabel = LabelFactory.standardLabel(text: "Four Stock Fridays - SSBM Weekly", textColor: .gray, fontStyle: .headline, textAlignment: .left, sizeToFit: true, adjustToFit: true).new
     
-    let dateLabel = LabelFactory.standardLabel(text: "4:00 P.M 11/31", textColor: .gray, fontStyle: .subheadline, textAlignment: .left, sizeToFit: true, adjustToFit: true).new
+    let dateLabel = LabelFactory.standardLabel(text: "6:00 PM Every Friday", textColor: .gray, fontStyle: .subheadline, textAlignment: .left, sizeToFit: true, adjustToFit: true).new
     
-    let descriptionLabel = LabelFactory.standardLabel(text: "4th Floor MLK", textColor: .gray, fontStyle: .subheadline, textAlignment: .left, sizeToFit: true, adjustToFit: true).new
+    let descriptionLabel = LabelFactory.standardLabel(text: "ENGR Room 343", textColor: .gray, fontStyle: .subheadline, textAlignment: .left, sizeToFit: true, adjustToFit: true).new
     
     override func setUpViews() {
         

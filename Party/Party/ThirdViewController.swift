@@ -69,7 +69,7 @@ class ThirdViewController: UIViewController {
         
         var imageView : UIImageView
         imageView = UIImageView(frame: CGRect(x:150 , y:100, width: 100,height: 100))
-        imageView.image = UIImage(named:"mario.png")
+        imageView.image = UIImage(named:"bobswaget.png")
         
         
 

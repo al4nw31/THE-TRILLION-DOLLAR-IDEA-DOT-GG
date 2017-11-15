@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var nav3 = UINavigationController()
         var third = ThirdViewController(nibName: nil, bundle: nil)
         nav3.viewControllers = [third]
-        nav3.tabBarItem = UITabBarItem(title: "Nav3", image: UIImage(named:"IconNav3"), tag: 1)
+        nav3.tabBarItem = UITabBarItem(title: "User Profile", image: UIImage(named:"IconNav3"), tag: 1)
         
         var tabs = UITabBarController()
         tabs.viewControllers = [nav1, nav2, nav3]
