@@ -16,12 +16,10 @@ class ThirdViewController: UIViewController {
     
     let txtField = UITextField(frame: CGRect(x:100,y:230,width:200,height:30))
     let txtField2 = UITextField(frame: CGRect(x:100,y:310,width:200,height:30))
-     let txtField3 = UITextField(frame: CGRect(x:100,y:400,width:200,height:30))
+    let txtField3 = UITextField(frame: CGRect(x:100,y:400,width:200,height:30))
     
-        override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
-            
-            
         
         self.view.backgroundColor = UIColor.white
         
@@ -36,7 +34,6 @@ class ThirdViewController: UIViewController {
         txtField.backgroundColor = UIColor.black
         txtField.textColor = UIColor.white
         txtField.text = mName
-        
         
         txtField2.backgroundColor = UIColor.black
         txtField2.textColor = UIColor.white
@@ -71,8 +68,6 @@ class ThirdViewController: UIViewController {
         imageView = UIImageView(frame: CGRect(x:150 , y:100, width: 100,height: 100))
         imageView.image = UIImage(named:"bobswaget.png")
         
-        
-
         self.view.addSubview(button)
         self.view.addSubview(txtField)
         self.view.addSubview(txtField2)

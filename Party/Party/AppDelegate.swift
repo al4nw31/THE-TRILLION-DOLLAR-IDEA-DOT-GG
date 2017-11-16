@@ -21,22 +21,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Create UIWindow within the screen boundaries.
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
-        var nav1 = UINavigationController()
-        var first = FirstViewController(nibName: nil, bundle: nil)
-        nav1.viewControllers = [first]
-        nav1.tabBarItem = UITabBarItem(title: "Nav1", image: UIImage(named:"IconNav1"), tag: 1)
+        let nav1: UINavigationController = {
+            let t = TabFactory.standardTab(title: "List", VC: FirstViewController(nibName: nil, bundle: nil), image: #imageLiteral(resourceName: "listIconTab")).new
+            return t
+        }()
         
-        var nav2 = UINavigationController()
-        var second = SecondViewController(nibName: nil, bundle: nil)
-        nav2.viewControllers = [second]
-        nav2.tabBarItem = UITabBarItem(title: "Events", image: UIImage(named:"IconNav2"), tag: 1)
+        let nav2: UINavigationController = {
+            let t = TabFactory.standardTab(title: "Events", VC: SecondViewController(nibName: nil, bundle: nil), image: #imageLiteral(resourceName: "eventsIconTab")).new
+            return t
+        }()
         
-        var nav3 = UINavigationController()
-        var third = ThirdViewController(nibName: nil, bundle: nil)
-        nav3.viewControllers = [third]
-        nav3.tabBarItem = UITabBarItem(title: "User Profile", image: UIImage(named:"IconNav3"), tag: 1)
+        let nav3: UINavigationController = {
+            let t = TabFactory.standardTab(title: "User Profile", VC: ThirdViewController(nibName: nil, bundle: nil), image: #imageLiteral(resourceName: "userIconTab")).new
+            return t
+        }()
         
-        var tabs = UITabBarController()
+        let tabs = UITabBarController()
         tabs.viewControllers = [nav1, nav2, nav3]
         
         self.window!.rootViewController = tabs;

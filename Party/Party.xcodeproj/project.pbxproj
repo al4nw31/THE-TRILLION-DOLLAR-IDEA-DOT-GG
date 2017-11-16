@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		107033AC1FBD0FC4007CC090 /* TabFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107033AB1FBD0FC4007CC090 /* TabFactory.swift */; };
 		107C51111FB9898F002E93CD /* LabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107C51101FB9898F002E93CD /* LabelFactory.swift */; };
 		107C51131FB98A63002E93CD /* ButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107C51121FB98A63002E93CD /* ButtonFactory.swift */; };
 		107C51151FB98A9A002E93CD /* ImageViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107C51141FB98A9A002E93CD /* ImageViewFactory.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		107033AB1FBD0FC4007CC090 /* TabFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabFactory.swift; sourceTree = "<group>"; };
 		107C51101FB9898F002E93CD /* LabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFactory.swift; sourceTree = "<group>"; };
 		107C51121FB98A63002E93CD /* ButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactory.swift; sourceTree = "<group>"; };
 		107C51141FB98A9A002E93CD /* ImageViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewFactory.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				107C51141FB98A9A002E93CD /* ImageViewFactory.swift */,
 				107C51161FB98ADC002E93CD /* BaseView.swift */,
 				107C51181FB98BFF002E93CD /* EventCard.swift */,
+				107033AB1FBD0FC4007CC090 /* TabFactory.swift */,
 				107C511A1FB98D31002E93CD /* ButtonsView.swift */,
 				89F6E7501F9EDE6300E7E7D3 /* ThirdViewController.swift */,
 				89F6E74E1F9EDE4E00E7E7D3 /* SecondViewController.swift */,
@@ -165,6 +168,7 @@
 			files = (
 				107C51131FB98A63002E93CD /* ButtonFactory.swift in Sources */,
 				89F6E74F1F9EDE4E00E7E7D3 /* SecondViewController.swift in Sources */,
+				107033AC1FBD0FC4007CC090 /* TabFactory.swift in Sources */,
 				89F6E7511F9EDE6300E7E7D3 /* ThirdViewController.swift in Sources */,
 				E70F91271F9ED4B000B6A84D /* FirstViewController.swift in Sources */,
 				107C51151FB98A9A002E93CD /* ImageViewFactory.swift in Sources */,

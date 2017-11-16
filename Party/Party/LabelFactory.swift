@@ -13,7 +13,7 @@ enum LabelFactory {
     case standardLabel(text: String, textColor: UIColor, fontStyle: UIFontTextStyle, textAlignment: NSTextAlignment?, sizeToFit: Bool, adjustToFit: Bool)
     var new: UILabel {
         switch self {
-        case .standardLabel(let text,let textColor,let fontStyle, let textAlignment,let sizeToFit, let adjustToFit):
+        case .standardLabel(let text,let textColor,let fontStyle,let textAlignment,let sizeToFit, let adjustToFit):
             return createStandardLabel(text: text, textColor: textColor, fontStyle: fontStyle, textAlignment: textAlignment, sizeToFit: sizeToFit, adjustToFit: adjustToFit)
         }
     }

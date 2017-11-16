@@ -36,7 +36,6 @@ class ButtonsView: BaseView {
         return c
     }()
     
-    
     override func setUpViews() {
         
         addSubview(container)
@@ -60,5 +59,4 @@ class ButtonsView: BaseView {
     @objc func map() {
         print("map print")
     }
-    
 }
