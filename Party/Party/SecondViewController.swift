@@ -2,7 +2,7 @@
 //  SecondViewController.swift
 //  Party
 //
-//  Created by Jared_Cook on 10/23/17.
+//  Created by Danny Nuch on 11/20/17.
 //  Copyright © 2017 alan. All rights reserved.
 //
 
@@ -20,9 +20,11 @@ class SecondViewController: UIViewController {
         let c = ButtonsView()
         return c
     }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "Events"
         view.backgroundColor = .white
         setUpViews()
     }

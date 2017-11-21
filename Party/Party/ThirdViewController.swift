@@ -21,6 +21,7 @@ class ThirdViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "Your Profile"
         self.view.backgroundColor = UIColor.white
         
         //ui button code

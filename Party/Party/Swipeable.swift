@@ -9,13 +9,11 @@
 import Foundation
 import UIKit
 
-//MARK: 1 protocol
 protocol Swipeable { }
 
-//MARK: 2 Protocol extension constrained to UIPanGestureRecognizer
+// Protocol extension constrained to UIPanGestureRecognizer
 extension Swipeable where Self: UIPanGestureRecognizer {
     
-    //MARK 3 Main function
     func swipeView(_ view: UIView) {
         
         switch state {
@@ -32,7 +30,7 @@ extension Swipeable where Self: UIPanGestureRecognizer {
         }
     }
     
-    //MARK: 4 Helper method that handles transformation
+    // Helper method that handles transformation
     private func transform(view: UIView, for translation: CGPoint) -> CGAffineTransform {
         
         let moveBy = CGAffineTransform(translationX: translation.x, y: translation.y)
@@ -41,5 +39,5 @@ extension Swipeable where Self: UIPanGestureRecognizer {
     }
 }
 
-//MARK: 5 UIPanGestureRecognizer conforming to Swipeable
+// UIPanGestureRecognizer conforming to Swipeable
 extension UIPanGestureRecognizer: Swipeable {}

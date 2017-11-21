@@ -1,6 +1,8 @@
 # THE-TRILLION-DOLLAR-IDEA-DOT-GG
 We gonna be rich boys
 
+Run with iPhone 8 Plus Simulator
+
 Components to Implement:
 <ul>
 <li>Login and Registration</li>
