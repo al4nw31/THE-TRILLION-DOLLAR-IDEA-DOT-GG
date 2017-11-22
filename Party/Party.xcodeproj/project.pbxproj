@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		102206071FC4F86900797F5E /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102206061FC4F86800797F5E /* WebView.swift */; };
 		107033AC1FBD0FC4007CC090 /* TabFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107033AB1FBD0FC4007CC090 /* TabFactory.swift */; };
 		107C51111FB9898F002E93CD /* LabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107C51101FB9898F002E93CD /* LabelFactory.swift */; };
 		107C51131FB98A63002E93CD /* ButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107C51121FB98A63002E93CD /* ButtonFactory.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		102206061FC4F86800797F5E /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		107033AB1FBD0FC4007CC090 /* TabFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabFactory.swift; sourceTree = "<group>"; };
 		107C51101FB9898F002E93CD /* LabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFactory.swift; sourceTree = "<group>"; };
 		107C51121FB98A63002E93CD /* ButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactory.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				89F6E74E1F9EDE4E00E7E7D3 /* SecondViewController.swift */,
 				107C511C1FB98FB5002E93CD /* Swipeable.swift */,
 				E70F91261F9ED4B000B6A84D /* FirstViewController.swift */,
+				102206061FC4F86800797F5E /* WebView.swift */,
 				10EC53401FC3E50900CF40BC /* Cell.swift */,
 				E70F912B1F9ED4B000B6A84D /* Assets.xcassets */,
 				E70F912D1F9ED4B000B6A84D /* LaunchScreen.storyboard */,
@@ -178,6 +181,7 @@
 				E70F91251F9ED4B000B6A84D /* AppDelegate.swift in Sources */,
 				107C51191FB98BFF002E93CD /* EventCard.swift in Sources */,
 				107C51171FB98ADC002E93CD /* BaseView.swift in Sources */,
+				102206071FC4F86900797F5E /* WebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

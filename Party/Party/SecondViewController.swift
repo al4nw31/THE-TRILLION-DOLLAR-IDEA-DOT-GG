@@ -10,8 +10,10 @@ import Foundation
 import UIKit
 
 class SecondViewController: UIViewController {
+
     lazy var eventCard: EventCard = {
         let ec = EventCard()
+        ec.SVC = self
         ec.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(swipeCard(sender:))))
         return ec
     }()
@@ -30,7 +32,6 @@ class SecondViewController: UIViewController {
     }
     
     func setUpViews() {
-        
         view.addSubview(eventCard)
         view.addSubview(buttonsContainer)
         

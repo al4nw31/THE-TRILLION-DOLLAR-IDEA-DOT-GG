@@ -11,6 +11,8 @@ import UIKit
 
 class EventCard: BaseView {
     
+    var SVC: SecondViewController? = nil
+    
     let eventImageView = ImageViewFactory.standardImageView(image: #imageLiteral(resourceName: "ssbm"), cornerRadius: 0, interactionEnabled: true, contentMode: .scaleAspectFill, sizeToFit: false).new
     
     lazy var websiteButton: UIButton = {
@@ -18,8 +20,19 @@ class EventCard: BaseView {
         return b
     }()
     
+    let wv = WebView()
+    
     @objc func website() {
         print("website print")
+        SVC?.view.addSubview(wv.webView)
+        let backButton = UIBarButtonItem(title: NSLocalizedString("Back", comment: "Back"), style: .plain, target: self, action: #selector(popWebView))
+        SVC?.navigationItem.setLeftBarButton(backButton, animated: false)
+    }
+    
+    @objc func popWebView() {
+        print("webview Popped")
+        SVC?.navigationItem.setLeftBarButton(nil, animated: false)
+        wv.webView.removeFromSuperview()
     }
     
     let containerView: BaseView = {
