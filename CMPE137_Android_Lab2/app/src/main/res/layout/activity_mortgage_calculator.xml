@@ -154,7 +154,8 @@
                 android:layout_height="wrap_content"
                 android:layout_column="0"
                 android:layout_row="5"
-                android:text="Payment" />
+                android:text="Payment"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <TextView
                 android:id="@+id/textView11"
