@@ -30,7 +30,7 @@ class EventCard: BaseView {
     }
     
     @objc func popWebView() {
-        print("webview Popped")
+        print("webview popped")
         SVC?.navigationItem.setLeftBarButton(nil, animated: false)
         wv.webView.removeFromSuperview()
     }

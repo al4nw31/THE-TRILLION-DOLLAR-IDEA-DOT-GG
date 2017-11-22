@@ -18,8 +18,9 @@ class SecondViewController: UIViewController {
         return ec
     }()
     
-    let buttonsContainer: ButtonsView = {
+    lazy var buttonsContainer: ButtonsView = {
         let c = ButtonsView()
+        c.SVC = self
         return c
     }()
     

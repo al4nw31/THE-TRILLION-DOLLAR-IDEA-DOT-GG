@@ -11,6 +11,8 @@ import UIKit
 
 class ButtonsView: BaseView {
     
+    var SVC: SecondViewController? = nil
+    
     lazy var likeButton: UIButton = {
         let b = ButtonFactory.buttonWithImage(image: #imageLiteral(resourceName: "like"), cornerRadius: 0, target: self, selector: #selector(like), sizeToFit: true).new
         return b
@@ -56,7 +58,18 @@ class ButtonsView: BaseView {
         print("pass print")
     }
     
+    let mv = MapView()
+    
     @objc func map() {
         print("map print")
+        SVC?.view.addSubview(mv.mapView)
+        let backButton = UIBarButtonItem(title: NSLocalizedString("Back", comment: "Back"), style: .plain, target: self, action: #selector(popMapView))
+        SVC?.navigationItem.setLeftBarButton(backButton, animated: false)
+    }
+    
+    @objc func popMapView() {
+        print("mapview popped")
+        SVC?.navigationItem.setLeftBarButton(nil, animated: false)
+        mv.mapView.removeFromSuperview()
     }
 }
