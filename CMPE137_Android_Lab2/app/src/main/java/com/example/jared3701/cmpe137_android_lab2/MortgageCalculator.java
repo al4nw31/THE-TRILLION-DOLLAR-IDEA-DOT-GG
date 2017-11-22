@@ -6,6 +6,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+//myImports
+import android.view.inputmethod.InputMethodManager;
+import android.content.Context;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class MortgageCalculator extends AppCompatActivity {
 
@@ -26,6 +32,13 @@ public class MortgageCalculator extends AppCompatActivity {
 
     Button buttonReset;
     Button buttonCalculate;
+
+    double rate=0; //((annual interest rate)/100)/12
+    double nper=0; //12 * (number of years)
+    double pv=0;   //principle of loan -> Home Value in the case.
+    double totalInterest=0;
+    double monthlyPayment=0;
+    double totalPropertyTax=0;
 
 
     @Override
@@ -78,7 +91,61 @@ public class MortgageCalculator extends AppCompatActivity {
         buttonCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                textView.setText("Error");
+                //Closes keyboard when Calculate is pushed.
+                InputMethodManager inputManager = (InputMethodManager)
+                        getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(),
+                        InputMethodManager.HIDE_NOT_ALWAYS);
+                if(editTextInterestRate.getText().toString().equals("")  || editTextTerms.getText().toString().equals("") || editTextHomeValue.getText().toString().equals(""))
+                {
+                    textView.setText("Error: Please make sure to fill out: Home Value, Interest rate, and Terms");
+                }
+                else{
+                    //Calculates Monthly Payments
+                    if(editTextDownPayment.getText().toString().equals("") || editTextDownPayment.getText().toString().equals("0")){
+                        rate = (Double.parseDouble(editTextInterestRate.getText().toString())/100)/12;
+                        nper = Double.parseDouble(editTextTerms.getText().toString())*12;
+                        pv = Double.parseDouble(editTextHomeValue.getText().toString());
+                        double top = rate * Math.pow(1+rate,nper);
+                        double bottom = Math.pow(1+rate, nper) -1;
+                        monthlyPayment = pv * (top/bottom);
+                        totalInterest = (monthlyPayment * nper)-pv;
+                        editTextMonthlyPaymentAmount.setText(Double.toString(Math.round((monthlyPayment * 100.0))/100.0));
+                        editTextTotalInterestPaid.setText(Double.toString(Math.round((totalInterest * 100.0))/100.0));
+                    }
+                    else if(!editTextDownPayment.getText().toString().equals("") || !editTextDownPayment.getText().toString().equals("0")){
+                        rate = (Double.parseDouble(editTextInterestRate.getText().toString())/100)/12;
+                        nper = Double.parseDouble(editTextTerms.getText().toString())*12;
+                        //The calculation for PV is the only difference as the person as put down a down Payment
+                        pv = Double.parseDouble(editTextHomeValue.getText().toString());
+                        double downPayment = Double.parseDouble(editTextDownPayment.getText().toString());
+                        double top = rate * Math.pow(1+rate,nper);
+                        double bottom = Math.pow(1+rate, nper) -1;
+                        monthlyPayment = (pv - downPayment) * (top/bottom);
+                        totalInterest = (monthlyPayment * nper)- (pv -downPayment);
+                        editTextMonthlyPaymentAmount.setText(Double.toString(Math.round((monthlyPayment * 100.0))/100.0));
+                        editTextTotalInterestPaid.setText(Double.toString(Math.round((totalInterest * 100.0))/100.0));
+                    }
+
+                    if(editTextPropertyTaxRate.getText().toString().equals("") || editTextPropertyTaxRate.getText().toString().equals("0")){
+                        //Do nothing if There is no value in Property Tax Rate
+                    }
+                    else{
+                        double propertyTaxRate = Double.parseDouble(editTextPropertyTaxRate.getText().toString())/100.0;
+                        totalPropertyTax = pv * propertyTaxRate;
+                        editTextTotalPropertyTaxPaid.setText(Double.toString(Math.round((totalPropertyTax * 100.0))/100.0));
+                    }
+
+
+                    //Calculates the Pay off Date -> There must be a Value in Terms so this should always be found.
+                    SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+                    Calendar c = Calendar.getInstance();
+                    c.setTime(new Date()); // Now use today date.
+                    c.add(Calendar.MONTH, (int)nper); // Adds the months that are left to the current date.
+                    String output = sdf.format(c.getTime());
+                    editTextPayOffDate.setText(output);
+                }
+
             }
         });
 
