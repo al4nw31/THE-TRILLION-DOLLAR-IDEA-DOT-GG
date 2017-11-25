@@ -18,6 +18,30 @@ class ThirdViewController: UIViewController {
     let txtField2 = UITextField(frame: CGRect(x:80,y:285,width:200,height:30))
     let txtField3 = UITextField(frame: CGRect(x:80,y:340,width:200,height:30))
     
+    //creating individual buttons for each game
+    let lolbutton = UIButton(frame: CGRect(x: 20, y: 420, width: 50, height: 50))
+    let csgobutton = UIButton(frame: CGRect(x: 90, y: 420, width: 50, height: 50))
+    let pubgbutton = UIButton(frame: CGRect(x: 160, y: 420, width: 50, height: 50))
+    let overwatchbutton = UIButton(frame: CGRect(x: 230, y: 420, width: 50, height: 50))
+    let hsbutton = UIButton(frame: CGRect(x: 300, y: 420, width: 50, height: 50))
+    
+    let osrsbutton = UIButton(frame: CGRect(x: 20, y: 490, width: 50, height: 50))
+    let dota2button = UIButton(frame: CGRect(x: 90, y: 490, width: 50, height: 50))
+    let wowbutton = UIButton(frame: CGRect(x: 160, y: 490, width: 50, height: 50))
+    let ssbmbutton = UIButton(frame: CGRect(x: 230, y: 490, width: 50, height: 50))
+    let sc2button = UIButton(frame: CGRect(x: 300, y: 490, width: 50, height: 50))
+    
+    var lolbool = true
+    var csgobool = true
+    var pubgbool = true
+    var overwatchbool = true
+    var hsbool = true
+    var osrsbool = true
+    var dota2bool = true
+    var wowbool = true
+    var ssbmbool = true
+    var sc2bool = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -68,57 +92,49 @@ class ThirdViewController: UIViewController {
         imageView = UIImageView(frame: CGRect(x:130 , y:100, width: 100,height: 100))
         imageView.image = UIImage(named:"bobswaget.png")
         
-        //creating buttons for each individual video game
-        let lolbutton = UIButton(frame: CGRect(x: 20, y: 420, width: 50, height: 50))
+        //modifying buttons for each individual video game
+        
         lolbutton.backgroundColor = .white
-        lolbutton.addTarget(self, action: #selector(gameButton), for: .touchUpInside)
+        lolbutton.addTarget(self, action: #selector(gameButtonlol), for: .touchUpInside)
         lolbutton.setImage(UIImage(named: "lol.png"), for: .normal)
         
-        let csgobutton = UIButton(frame: CGRect(x: 90, y: 420, width: 50, height: 50))
         csgobutton.backgroundColor = .white
-        csgobutton.addTarget(self, action: #selector(gameButton), for: .touchUpInside)
+        csgobutton.addTarget(self, action: #selector(gameButtoncsgo), for: .touchUpInside)
         csgobutton.setImage(UIImage(named: "csgo.png"), for: .normal)
         
-        let pubgbutton = UIButton(frame: CGRect(x: 160, y: 420, width: 50, height: 50))
         pubgbutton.backgroundColor = .white
-        pubgbutton.addTarget(self, action: #selector(gameButton), for: .touchUpInside)
+        pubgbutton.addTarget(self, action: #selector(gameButtonpubg), for: .touchUpInside)
         pubgbutton.setImage(UIImage(named: "pubg.png"), for: .normal)
         
-        let overwatchbutton = UIButton(frame: CGRect(x: 230, y: 420, width: 50, height: 50))
         overwatchbutton.backgroundColor = .white
-        overwatchbutton.addTarget(self, action: #selector(gameButton), for: .touchUpInside)
+        overwatchbutton.addTarget(self, action: #selector(gameButtonoverwatch), for: .touchUpInside)
         overwatchbutton.setImage(UIImage(named: "overwatch.png"), for: .normal)
         
-        let hsbutton = UIButton(frame: CGRect(x: 300, y: 420, width: 50, height: 50))
         hsbutton.backgroundColor = .white
-        hsbutton.addTarget(self, action: #selector(gameButton), for: .touchUpInside)
+        hsbutton.addTarget(self, action: #selector(gameButtonhs), for: .touchUpInside)
         hsbutton.setImage(UIImage(named: "hs.png"), for: .normal)
         
         /////////////
         
-        let osrsbutton = UIButton(frame: CGRect(x: 20, y: 490, width: 50, height: 50))
+        
         osrsbutton.backgroundColor = .white
-        osrsbutton.addTarget(self, action: #selector(gameButton), for: .touchUpInside)
+        osrsbutton.addTarget(self, action: #selector(gameButtonosrs), for: .touchUpInside)
         osrsbutton.setImage(UIImage(named: "osrs.png"), for: .normal)
         
-        let dota2button = UIButton(frame: CGRect(x: 90, y: 490, width: 50, height: 50))
         dota2button.backgroundColor = .white
-        dota2button.addTarget(self, action: #selector(gameButton), for: .touchUpInside)
+        dota2button.addTarget(self, action: #selector(gameButtondota2), for: .touchUpInside)
         dota2button.setImage(UIImage(named: "dota2.png"), for: .normal)
         
-        let wowbutton = UIButton(frame: CGRect(x: 160, y: 490, width: 50, height: 50))
         wowbutton.backgroundColor = .white
-        wowbutton.addTarget(self, action: #selector(gameButton), for: .touchUpInside)
+        wowbutton.addTarget(self, action: #selector(gameButtonwow), for: .touchUpInside)
         wowbutton.setImage(UIImage(named: "wow.png"), for: .normal)
         
-        let ssbmbutton = UIButton(frame: CGRect(x: 230, y: 490, width: 50, height: 50))
         ssbmbutton.backgroundColor = .white
-        ssbmbutton.addTarget(self, action: #selector(gameButton), for: .touchUpInside)
+        ssbmbutton.addTarget(self, action: #selector(gameButtonssbm), for: .touchUpInside)
         ssbmbutton.setImage(UIImage(named: "ssbm-1.png"), for: .normal)
         
-        let sc2button = UIButton(frame: CGRect(x: 300, y: 490, width: 50, height: 50))
         sc2button.backgroundColor = .white
-        sc2button.addTarget(self, action: #selector(gameButton), for: .touchUpInside)
+        sc2button.addTarget(self, action: #selector(gameButtonsc2), for: .touchUpInside)
         sc2button.setImage(UIImage(named: "sc2.png"), for: .normal)
         
         
@@ -158,9 +174,130 @@ class ThirdViewController: UIViewController {
     
     }
     
-    @objc func gameButton(sender: UIButton!, vgName: Bool){
+    @objc func gameButtonlol(sender: UIButton!){
         print("video game button pressed")
+        if lolbool{
+            lolbutton.alpha = 0.5
+            lolbool = false
+        }
+        else
+        { lolbutton.alpha = 1
+            lolbool = true
+        }
+    }
     
+    @objc func gameButtoncsgo(sender: UIButton!){
+        print("video game button pressed")
+        if csgobool{
+            csgobutton.alpha = 0.5
+            csgobool = false
+        }
+        else
+        { csgobutton.alpha = 1
+            csgobool = true
+        }
+    }
+    
+    @objc func gameButtonpubg(sender: UIButton!){
+        print("video game button pressed")
+        if pubgbool{
+            pubgbutton.alpha = 0.5
+            pubgbool = false
+        }
+        else
+        { pubgbutton.alpha = 1
+            pubgbool = true
+        }
+    }
+    
+    @objc func gameButtonoverwatch(sender: UIButton!){
+        print("video game button pressed")
+        if overwatchbool{
+            overwatchbutton.alpha = 0.5
+            overwatchbool = false
+        }
+        else
+        { overwatchbutton.alpha = 1
+            overwatchbool = true
+        }
+    }
+    
+    @objc func gameButtonhs(sender: UIButton!){
+        print("video game button pressed")
+        if hsbool{
+            hsbutton.alpha = 0.5
+            hsbool = false
+        }
+        else
+        { hsbutton.alpha = 1
+            hsbool = true
+        }
+    }
+    
+    @objc func gameButtonosrs(sender: UIButton!){
+        print("video game button pressed")
+        if osrsbool{
+            osrsbutton.alpha = 0.5
+            osrsbool = false
+        }
+        else
+        { osrsbutton.alpha = 1
+            osrsbool = true
+        }
+    }
+    
+    @objc func gameButtondota2(sender: UIButton!){
+        print("video game button pressed")
+        if dota2bool{
+            dota2button.alpha = 0.5
+            dota2bool = false
+        }
+        else
+        { dota2button.alpha = 1
+            dota2bool = true
+        }
+    }
+    
+    @objc func gameButtonssbm(sender: UIButton!){
+        print("video game button pressed")
+        if ssbmbool{
+            ssbmbutton.alpha = 0.5
+            ssbmbool = false
+        }
+        else
+        { ssbmbutton.alpha = 1
+            ssbmbool = true
+        }
+    }
+    
+    @objc func gameButtonsc2(sender: UIButton!){
+        print("video game button pressed")
+        if sc2bool{
+            sc2button.alpha = 0.5
+            sc2bool = false
+        }
+        else
+        { sc2button.alpha = 1
+            sc2bool = true
+        }
+    }
+    
+    @objc func gameButtonwow(sender: UIButton!){
+        print("video game button pressed")
+        if wowbool{
+            wowbutton.alpha = 0.5
+            wowbool = false
+        }
+        else
+        { wowbutton.alpha = 1
+            wowbool = true
+        }
+    }
+    
+    @objc func gameButton(sender: UIButton!){
+        print("video game button pressed")
+
+        
     }
     
     override func didReceiveMemoryWarning() {
