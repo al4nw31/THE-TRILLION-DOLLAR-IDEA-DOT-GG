@@ -14,9 +14,9 @@ class ThirdViewController: UIViewController {
     var mLoc = "San Fransisco"
     var mDesc = "Everywhere You Look"
     
-    let txtField = UITextField(frame: CGRect(x:100,y:230,width:200,height:30))
-    let txtField2 = UITextField(frame: CGRect(x:100,y:285,width:200,height:30))
-    let txtField3 = UITextField(frame: CGRect(x:100,y:340,width:200,height:30))
+    let txtField = UITextField(frame: CGRect(x:80,y:230,width:200,height:30))
+    let txtField2 = UITextField(frame: CGRect(x:80,y:285,width:200,height:30))
+    let txtField3 = UITextField(frame: CGRect(x:80,y:340,width:200,height:30))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class ThirdViewController: UIViewController {
         self.view.backgroundColor = UIColor.white
         
         //save button code
-        let button = UIButton(frame: CGRect(x: 180, y: 380, width: 50, height: 25))
+        let button = UIButton(frame: CGRect(x: 160, y: 380, width: 50, height: 25))
         button.backgroundColor = .black //originally black
         button.setTitle("Save", for: .normal)
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
@@ -46,26 +46,26 @@ class ThirdViewController: UIViewController {
         txtField3.text = mDesc
         
         //uilabel code need 3 of these
-        let label = UILabel(frame: CGRect(x:100,y:205,width:200,height:20))
+        let label = UILabel(frame: CGRect(x:80,y:205,width:200,height:20))
         label.backgroundColor = UIColor.white
         label.textColor = UIColor.black
         label.textAlignment = NSTextAlignment.center
         label.text = "Name"
         
-        let label2 = UILabel(frame: CGRect(x:100,y:265,width:200,height:20))
+        let label2 = UILabel(frame: CGRect(x:80,y:265,width:200,height:20))
         label2.backgroundColor = UIColor.white
         label2.textColor = UIColor.black
         label2.textAlignment = NSTextAlignment.center
         label2.text = "Location"
         
-        let label3 = UILabel(frame: CGRect(x:100,y:320,width:200,height:20))
+        let label3 = UILabel(frame: CGRect(x:80,y:320,width:200,height:20))
         label3.backgroundColor = UIColor.white
         label3.textColor = UIColor.black
         label3.textAlignment = NSTextAlignment.center
         label3.text = "Description"
         
         var imageView : UIImageView
-        imageView = UIImageView(frame: CGRect(x:150 , y:100, width: 100,height: 100))
+        imageView = UIImageView(frame: CGRect(x:130 , y:100, width: 100,height: 100))
         imageView.image = UIImage(named:"bobswaget.png")
         
         //creating buttons for each individual video game
