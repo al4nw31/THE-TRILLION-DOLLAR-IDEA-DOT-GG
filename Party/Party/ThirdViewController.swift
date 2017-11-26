@@ -7,11 +7,15 @@
 //
 import UIKit
 import Foundation
+import FacebookCore
+
 
 class ThirdViewController: UIViewController {
     
-    var mName = "Bob Saget"
-    var mLoc = "San Fransisco"
+    
+    var imageView : UIImageView!
+    var mName = ""; //"Bob Saget"
+    var mLoc = ""; //"San Fransisco"
     var mDesc = "Everywhere You Look"
     
     let txtField = UITextField(frame: CGRect(x:80,y:230,width:200,height:30))
@@ -44,6 +48,67 @@ class ThirdViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //facebook
+        /*
+        let connection = GraphRequestConnection()
+        connection.add(GraphRequest(graphPath: "/me")) { httpResponse, result in
+            switch result {
+            case .success(let response):
+                print("Graph Request Succeeded: \(response)")
+                //self.mName = response.stringValue!;
+
+            case .failed(let error):
+                print("Graph Request Failed: \(error)")
+            }
+        }
+        
+        //print("responce" , response);
+        connection.start()*/
+        //photo-id
+        //picture.type(large)
+        let params = ["fields" : "email, name, location, picture.type(large)"]
+        let graphRequest = GraphRequest(graphPath: "me", parameters: params)
+        graphRequest.start {
+            (urlResponse, requestResult) in
+            
+            switch requestResult {
+            case .failed(let error):
+                print("error in graph request:", error)
+                break
+            case .success(let graphResponse):
+                if let responseDictionary = graphResponse.dictionaryValue {
+                    print("responseDictionary: ", responseDictionary)
+                    
+                    print("mName ", self.mName)
+                    print("myName: ", responseDictionary["name"])
+                    print("myEmail: ", responseDictionary["email"])
+                    print("myHometown: ", responseDictionary["location"])
+                    
+                    //set Name from facebook
+                    self.mName = responseDictionary["name"] as! String
+                    self.txtField.text = self.mName
+                    //set Picture from facebook
+                    if let imageURL = ((responseDictionary["picture"] as? [String: Any])?["data"] as? [String: Any])?["url"] as? String {
+                        //Download image from imageURL
+                        print("imageURL: ", imageURL)
+                        let url = URL(string: imageURL)
+                        let data = try? Data(contentsOf: url!)
+                        if let imageData = data{
+                            let image = UIImage(data: data!)
+                            self.imageView.image = image;
+                        }
+                    }
+                    //Set Location from facebook
+                    if let myLocation = ((responseDictionary["location"] as? [String: Any])?["name"] as? String) {
+                        //print("myLocation2: ", myLocation);
+                        self.mLoc = myLocation;
+                        self.txtField2.text = self.mLoc
+                    }
+                }
+            }
+        }
+        //end facebook
         
         navigationItem.title = "Your Profile"
         self.view.backgroundColor = UIColor.white
@@ -88,9 +153,10 @@ class ThirdViewController: UIViewController {
         label3.textAlignment = NSTextAlignment.center
         label3.text = "Description"
         
-        var imageView : UIImageView
-        imageView = UIImageView(frame: CGRect(x:130 , y:100, width: 100,height: 100))
-        imageView.image = UIImage(named:"bobswaget.png")
+        //var imageView : UIImageView
+        self.imageView = UIImageView(frame: CGRect(x:130 , y:100, width: 100,height: 100))
+        //imageView.image = UIImage(named:"bobswaget.png")
+        //self.imageView.image = UIImage(named:"Aura_Silver-granite-iOS-11-GM-iPhone-wallpapers.jpg")
         
         //modifying buttons for each individual video game
         
@@ -149,10 +215,10 @@ class ThirdViewController: UIViewController {
         
         //displaying video game buttons
         self.view.addSubview(lolbutton)
-       self.view.addSubview(csgobutton)
-       self.view.addSubview(overwatchbutton)
-       self.view.addSubview(pubgbutton)
-      self.view.addSubview(hsbutton)
+        self.view.addSubview(csgobutton)
+        self.view.addSubview(overwatchbutton)
+        self.view.addSubview(pubgbutton)
+        self.view.addSubview(hsbutton)
         
         self.view.addSubview(osrsbutton)
         self.view.addSubview(dota2button)

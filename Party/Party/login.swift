@@ -9,11 +9,8 @@
 import UIKit
 import Foundation
 
-
 import FacebookLogin
 import FacebookCore
-
-
 
 //import PerfectPostgreSQL
 
@@ -45,7 +42,7 @@ class loginView: UIViewController{
         self.currentH = myY;
     }
     
-    
+    /*
     @objc func textField1DidBeginEditing(_ textField: UITextField) {
         if(self.textField_1.isEditing == false){
             //print("test");
@@ -64,7 +61,7 @@ class loginView: UIViewController{
         else{
             self.view.endEditing(true);
         }
-    }
+    }*/
     
     init() {
         super.init(nibName: nil, bundle: nil);
@@ -113,12 +110,14 @@ class loginView: UIViewController{
         self.setCoordinates(myX: screenWidth-(screenWidth/WBlocks), myY: screenHeight-(screenHeight-20));
         
         //facebook login
-        let loginButton = LoginButton(readPermissions: [ .publicProfile, .email, .userFriends ])
+        let loginButton = LoginButton(readPermissions: [ .publicProfile, .email, .userFriends, .userLocation ])
         //loginButton.center = view.center
         self.currentH += self.BlockH*6;
         loginButton.center = CGPoint(x: screenWidth/2, y: self.currentH)
         //view.centerYAnchor
         
+        
+        /*
         self.textField_1 = UITextField(frame: CGRect(x: self.currentW, y: self.currentH, width: self.screenWidth, height: self.BlockH)); //x = 20, y = 100
         self.textField_1.text = "Username";
         self.textField_1.textAlignment = NSTextAlignment.center;
@@ -136,7 +135,8 @@ class loginView: UIViewController{
         self.textField_2.backgroundColor = UIColor(displayP3Red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0);
         self.textField_2.borderStyle = UITextBorderStyle.roundedRect;
         self.textField_2.addTarget(self, action: #selector(textField2DidBeginEditing), for: UIControlEvents.touchDown);
-        
+        */
+ 
         for i in 0...1
         {
             if(i == 0){//Login
@@ -167,6 +167,24 @@ class loginView: UIViewController{
         super.didReceiveMemoryWarning();
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
+    //when login button clicked
+    /*
+    @objc func loginButtonClicked() {
+        let loginManager = LoginManager()
+        loginManager.logIn([ .publicProfile ], viewController: self) { loginResult in
+            switch loginResult {
+            case .failed(let error):
+                print(error)
+            case .cancelled:
+                print("User cancelled login.")
+            case .success(let grantedPermissions, let declinedPermissions, let accessToken):
+                self.getFBUserData()
+            }
+        }
+    }*/
     
     @objc func buttonAction(sender: UIButton!){
         let tag = sender.tag;
@@ -208,9 +226,6 @@ class loginView: UIViewController{
         }
         if(tag == 1){//Create New User
             print("Create New User");
-        }
-        if(tag == 5){
-            dismiss(animated: true, completion: nil);
         }
     }
 }
