@@ -53,6 +53,9 @@ class ButtonsView: BaseView {
     
     @objc func like() {
         print("like print")
+        //
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue:"insert"), object: nil)
+        //
         FVC?.insertCell()
     }
     

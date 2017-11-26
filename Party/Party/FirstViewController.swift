@@ -14,12 +14,18 @@ class FirstViewController: UITableViewController {
     var eventDescription = ["event 1", "event 2", "event 3"]
     var eventDate = ["date 1", "date 2", "date 3"]
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         navigationItem.title = "Your Events"
         tableView.register(Cell.self, forCellReuseIdentifier: "cellId")
+        
+        //
+        NotificationCenter.default.addObserver(self, selector: #selector(insertCell),name: NSNotification.Name(rawValue: "insert"), object: nil)
+        //
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -35,7 +41,8 @@ class FirstViewController: UITableViewController {
         return cell
     }
     
-    func insertCell() {
+    @objc func insertCell() {
+        
         eventName.append("name \(eventName.count+1)")
         eventDescription.append("desc \(eventName.count)")
         eventDate.append("date \(eventName.count)")
@@ -45,6 +52,7 @@ class FirstViewController: UITableViewController {
         let insertionIndexPath = IndexPath(row: eventName.count-1 , section: 0)
         tableView.insertRows(at: [insertionIndexPath], with: .automatic)
         tableView.endUpdates()
+       
     }
     
     func deleteCell(cell: UITableViewCell) {
