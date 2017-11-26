@@ -98,6 +98,8 @@ class loginView: UIViewController{
             myButton.backgroundColor = myBackgroundColor;
             myButton.addTarget(self.view.inputViewController, action: #selector(buttonAction), for: .touchUpInside);
             myButton.tag=myTag;
+            myButton.setTitleColor(.white, for: .normal);
+
             self.buttons.append(myButton);
             self.view.addSubview(myButton);
             //end
@@ -122,7 +124,7 @@ class loginView: UIViewController{
         self.textField_1.textAlignment = NSTextAlignment.center;
         self.textField_1.backgroundColor = UIColor(displayP3Red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0);
         self.textField_1.borderStyle = UITextBorderStyle.roundedRect;
-        self.textField_1.textColor = UIColor.white;
+        //self.textField_1.textColor = UIColor.white;
         self.textField_1.addTarget(self, action: #selector(textField1DidBeginEditing), for: UIControlEvents.touchDown);
         //self.textField_1.addTarget(self, action: #selector(textFieldStopEditing), for: UIControlEvents.touchDown);
         
@@ -143,8 +145,7 @@ class loginView: UIViewController{
                 //self.currentH += self.BlockH;
                 let button = UIButton(frame: CGRect(x: self.currentW, y: self.currentH, width: self.screenWidth/2.3, height: self.BlockH * 0.35));
                 button.center = CGPoint(x: screenWidth/2, y: self.currentH)
-
-                buttonSettings(myButton: button, myTitle: "Login", myBackgroundColor: UIColor(displayP3Red: 0.8, green: 0.8, blue: 0.8, alpha: 1.0), myTitleColor: UIColor.black, myTag: i);
+                buttonSettings(myButton: button, myTitle: "Login", myBackgroundColor: UIColor(displayP3Red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0), myTitleColor: UIColor.black, myTag: i);
             }
             /*
             if(i == 1){//Create New User
