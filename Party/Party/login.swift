@@ -8,12 +8,13 @@
 
 import UIKit
 import Foundation
+//import PerfectPostgreSQL
 
 class loginView: UIViewController{
     
     //vars for UI
     var window: UIWindow?
-
+    
     
     private var textField_1: UITextField!       //username
     private var textField_2: UITextField!       //password
@@ -49,9 +50,9 @@ class loginView: UIViewController{
     }
     
     @objc func textField2DidBeginEditing(_ textField: UITextField) {
-        if(self.textField_1.isEditing == false){
+        if(self.textField_2.isEditing == false){
             //print("test");
-            self.textField_1.text = "";
+            self.textField_2.text = "";
         }
         else{
             self.view.endEditing(true);
@@ -95,14 +96,14 @@ class loginView: UIViewController{
             //end
         }
         
-        //self.view.backgroundColor = UIColor.black.withAlphaComponent(0.5);
+        self.view.backgroundColor = UIColor.white.withAlphaComponent(1.0);
         
         //sets init coordinates
         self.setCoordinates(myX: screenWidth-(screenWidth/WBlocks), myY: screenHeight-(screenHeight-20));
         
         
         self.textField_1 = UITextField(frame: CGRect(x: self.currentW, y: self.currentH, width: self.screenWidth, height: self.BlockH)); //x = 20, y = 100
-        self.textField_1.text = "Create a New Var";
+        self.textField_1.text = "Username";
         self.textField_1.textAlignment = NSTextAlignment.center;
         self.textField_1.backgroundColor = UIColor(displayP3Red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0);
         self.textField_1.borderStyle = UITextBorderStyle.roundedRect;
@@ -112,7 +113,7 @@ class loginView: UIViewController{
         self.currentH += self.BlockH;
         self.currentH += self.BlockH * 0.3;
         self.textField_2 = UITextField(frame: CGRect(x: self.currentW, y: self.currentH, width: self.screenWidth, height: self.BlockH)); //x = 20, y = 100
-        self.textField_2.text = "Create a New Var";
+        self.textField_2.text = "Password";
         self.textField_2.textAlignment = NSTextAlignment.center;
         self.textField_2.backgroundColor = UIColor(displayP3Red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0);
         self.textField_2.borderStyle = UITextBorderStyle.roundedRect;
@@ -124,14 +125,14 @@ class loginView: UIViewController{
                 self.currentW = 0;
                 self.currentH += self.BlockH;
                 self.currentH += self.BlockH * 0.3;
-                let button = UIButton(frame: CGRect(x: self.currentW, y: self.currentH, width: self.screenWidth, height: self.BlockH));
+                let button = UIButton(frame: CGRect(x: self.currentW, y: self.currentH, width: self.screenWidth, height: self.BlockH * 0.6));
                 buttonSettings(myButton: button, myTitle: "Login", myBackgroundColor: UIColor(displayP3Red: 0.8, green: 0.8, blue: 0.8, alpha: 1.0), myTitleColor: UIColor.black, myTag: i);
             }
             if(i == 1){//2nd
                 self.currentW = 0;
-                self.currentH += self.BlockH;
+                self.currentH += self.BlockH * 0.6;
                 self.currentH += self.BlockH * 0.3;
-                let button = UIButton(frame: CGRect(x: self.currentW, y: self.currentH, width: self.screenWidth, height: self.BlockH));
+                let button = UIButton(frame: CGRect(x: self.currentW, y: self.currentH, width: self.screenWidth, height: self.BlockH * 0.6));
                 buttonSettings(myButton: button, myTitle: "Create New User", myBackgroundColor: UIColor(displayP3Red: 0.8, green: 0.8, blue: 0.8, alpha: 1.0), myTitleColor: UIColor.black, myTag: i);
             }
         }
@@ -189,4 +190,3 @@ class loginView: UIViewController{
         }
     }
 }
-
