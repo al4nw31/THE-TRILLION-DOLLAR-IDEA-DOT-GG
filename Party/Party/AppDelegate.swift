@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SQLite3
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,9 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
-        // Create UIWindow within the screen boundaries.
-        self.window = UIWindow(frame: UIScreen.main.bounds)
         
+        let login = loginView();
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+
+
+        // Create UIWindow within the screen boundaries.
+        /*
         let nav1: UINavigationController = {
             let t = TabFactory.standardTab(title: "List", VC: FirstViewController(nibName: nil, bundle: nil), image: #imageLiteral(resourceName: "listIconTab")).new
             return t
@@ -34,11 +39,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let t = TabFactory.standardTab(title: "User Profile", VC: ThirdViewController(nibName: nil, bundle: nil), image: #imageLiteral(resourceName: "userIconTab")).new
             return t
         }()
-        
         let tabs = UITabBarController()
         tabs.viewControllers = [nav1, nav2, nav3]
+        */
         
-        self.window!.rootViewController = tabs;
+        self.window!.rootViewController = login;
         self.window?.makeKeyAndVisible();
         
         return true

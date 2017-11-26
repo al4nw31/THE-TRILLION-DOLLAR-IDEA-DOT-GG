@@ -21,6 +21,7 @@
 		89AE7A0C1FC9971E00617A42 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89AE79FE1FC996E100617A42 /* SQLite.framework */; };
 		89AE7A0D1FC9973400617A42 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89AE79FE1FC996E100617A42 /* SQLite.framework */; };
 		89AE7A0E1FC9973400617A42 /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 89AE79FE1FC996E100617A42 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		89AE7A151FCA327700617A42 /* login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89AE7A141FCA327700617A42 /* login.swift */; };
 		89F6E74F1F9EDE4E00E7E7D3 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F6E74E1F9EDE4E00E7E7D3 /* SecondViewController.swift */; };
 		89F6E7511F9EDE6300E7E7D3 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F6E7501F9EDE6300E7E7D3 /* ThirdViewController.swift */; };
 		E70F91251F9ED4B000B6A84D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70F91241F9ED4B000B6A84D /* AppDelegate.swift */; };
@@ -115,6 +116,7 @@
 		107C511C1FB98FB5002E93CD /* Swipeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swipeable.swift; sourceTree = "<group>"; };
 		10EC53401FC3E50900CF40BC /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		89AE79F31FC996E000617A42 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
+		89AE7A141FCA327700617A42 /* login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = login.swift; sourceTree = "<group>"; };
 		89F6E74E1F9EDE4E00E7E7D3 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		89F6E7501F9EDE6300E7E7D3 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		E70F91211F9ED4B000B6A84D /* Party.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Party.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				E70F91241F9ED4B000B6A84D /* AppDelegate.swift */,
+				89AE7A141FCA327700617A42 /* login.swift */,
 				107C51101FB9898F002E93CD /* LabelFactory.swift */,
 				107C51121FB98A63002E93CD /* ButtonFactory.swift */,
 				107C51141FB98A9A002E93CD /* ImageViewFactory.swift */,
@@ -348,6 +351,7 @@
 				107C51191FB98BFF002E93CD /* EventCard.swift in Sources */,
 				107C51171FB98ADC002E93CD /* BaseView.swift in Sources */,
 				102206071FC4F86900797F5E /* WebView.swift in Sources */,
+				89AE7A151FCA327700617A42 /* login.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
