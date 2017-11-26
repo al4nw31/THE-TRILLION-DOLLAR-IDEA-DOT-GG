@@ -38,7 +38,17 @@ class loginView: UIViewController{
     }
     
     
-    @objc func textFieldDidBeginEditing(_ textField: UITextField) {
+    @objc func textField1DidBeginEditing(_ textField: UITextField) {
+        if(self.textField_1.isEditing == false){
+            //print("test");
+            self.textField_1.text = "";
+        }
+        else{
+            self.view.endEditing(true);
+        }
+    }
+    
+    @objc func textField2DidBeginEditing(_ textField: UITextField) {
         if(self.textField_1.isEditing == false){
             //print("test");
             self.textField_1.text = "";
@@ -90,36 +100,43 @@ class loginView: UIViewController{
         //sets init coordinates
         self.setCoordinates(myX: screenWidth-(screenWidth/WBlocks), myY: screenHeight-(screenHeight-20));
         
-        print("currentW " , self.currentW);
-        print("currentH " , self.currentH);
-        print("screenWidth " , self.screenWidth);
-        print("height " , self.BlockH)
         
         self.textField_1 = UITextField(frame: CGRect(x: self.currentW, y: self.currentH, width: self.screenWidth, height: self.BlockH)); //x = 20, y = 100
         self.textField_1.text = "Create a New Var";
         self.textField_1.textAlignment = NSTextAlignment.center;
         self.textField_1.backgroundColor = UIColor(displayP3Red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0);
         self.textField_1.borderStyle = UITextBorderStyle.roundedRect;
-        self.textField_1.addTarget(self, action: #selector(textFieldDidBeginEditing), for: UIControlEvents.touchDown);
+        self.textField_1.addTarget(self, action: #selector(textField1DidBeginEditing), for: UIControlEvents.touchDown);
         //self.textField_1.addTarget(self, action: #selector(textFieldStopEditing), for: UIControlEvents.touchDown);
+        
+        self.currentH += self.BlockH;
+        self.currentH += self.BlockH * 0.3;
+        self.textField_2 = UITextField(frame: CGRect(x: self.currentW, y: self.currentH, width: self.screenWidth, height: self.BlockH)); //x = 20, y = 100
+        self.textField_2.text = "Create a New Var";
+        self.textField_2.textAlignment = NSTextAlignment.center;
+        self.textField_2.backgroundColor = UIColor(displayP3Red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0);
+        self.textField_2.borderStyle = UITextBorderStyle.roundedRect;
+        self.textField_2.addTarget(self, action: #selector(textField2DidBeginEditing), for: UIControlEvents.touchDown);
         
         for i in 0...1
         {
             if(i == 0){//CREATE
                 self.currentW = 0;
                 self.currentH += self.BlockH;
+                self.currentH += self.BlockH * 0.3;
                 let button = UIButton(frame: CGRect(x: self.currentW, y: self.currentH, width: self.screenWidth, height: self.BlockH));
                 buttonSettings(myButton: button, myTitle: "Login", myBackgroundColor: UIColor(displayP3Red: 0.8, green: 0.8, blue: 0.8, alpha: 1.0), myTitleColor: UIColor.black, myTag: i);
             }
             if(i == 1){//2nd
                 self.currentW = 0;
                 self.currentH += self.BlockH;
+                self.currentH += self.BlockH * 0.3;
                 let button = UIButton(frame: CGRect(x: self.currentW, y: self.currentH, width: self.screenWidth, height: self.BlockH));
                 buttonSettings(myButton: button, myTitle: "Create New User", myBackgroundColor: UIColor(displayP3Red: 0.8, green: 0.8, blue: 0.8, alpha: 1.0), myTitleColor: UIColor.black, myTag: i);
             }
         }
         self.view.addSubview(self.textField_1!);
-        //self.view.addSubview(self.textField_2!);
+        self.view.addSubview(self.textField_2!);
     }
     
     override func didReceiveMemoryWarning() {
