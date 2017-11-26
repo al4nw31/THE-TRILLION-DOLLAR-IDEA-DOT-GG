@@ -8,6 +8,9 @@
 
 import UIKit
 import Foundation
+import FacebookLogin
+
+
 //import PerfectPostgreSQL
 
 class loginView: UIViewController{
@@ -101,6 +104,9 @@ class loginView: UIViewController{
         //sets init coordinates
         self.setCoordinates(myX: screenWidth-(screenWidth/WBlocks), myY: screenHeight-(screenHeight-20));
         
+        //facebook login
+        let loginButton = LoginButton(readPermissions: [ .publicProfile, .email, .userFriends ])
+        loginButton.center = view.center
         
         self.textField_1 = UITextField(frame: CGRect(x: self.currentW, y: self.currentH, width: self.screenWidth, height: self.BlockH)); //x = 20, y = 100
         self.textField_1.text = "Username";
@@ -138,6 +144,8 @@ class loginView: UIViewController{
         }
         self.view.addSubview(self.textField_1!);
         self.view.addSubview(self.textField_2!);
+        view.addSubview(loginButton)
+
     }
     
     override func didReceiveMemoryWarning() {
