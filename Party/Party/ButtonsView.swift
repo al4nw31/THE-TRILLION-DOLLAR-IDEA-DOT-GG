@@ -11,6 +11,7 @@ import UIKit
 
 class ButtonsView: BaseView {
     
+    var FVC: FirstViewController? = FirstViewController()
     var SVC: SecondViewController? = nil
     
     lazy var likeButton: UIButton = {
@@ -52,6 +53,7 @@ class ButtonsView: BaseView {
     
     @objc func like() {
         print("like print")
+        FVC?.insertCell()
     }
     
     @objc func pass() {

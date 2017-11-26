@@ -10,7 +10,9 @@ import UIKit
 
 class FirstViewController: UITableViewController {
 
-    var items = ["Item 1", "Item 2", "Item 3"]
+    var eventName = ["name 1", "name 2", "name 3"]
+    var eventDescription = ["event 1", "event 2", "event 3"]
+    var eventDate = ["date 1", "date 2", "date 3"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,25 +23,35 @@ class FirstViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return eventName.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! Cell
-        cell.nameLabel.text = items[indexPath.row]
+        cell.nameLabel.text = eventName[indexPath.row]
+        cell.descriptionLabel.text = eventDescription[indexPath.row]
+        cell.dateLabel.text = eventDate[indexPath.row]
         cell.FVC = self
         return cell
     }
     
     func insertCell() {
-        items.append("Item \(items.count+1)")
-        let insertionIndexPath = IndexPath(row: items.count-1 , section: 0)
+        eventName.append("name \(eventName.count+1)")
+        eventDescription.append("desc \(eventName.count)")
+        eventDate.append("date \(eventName.count)")
+        print("insert cell print", eventName)
+        
+        tableView.beginUpdates()
+        let insertionIndexPath = IndexPath(row: eventName.count-1 , section: 0)
         tableView.insertRows(at: [insertionIndexPath], with: .automatic)
+        tableView.endUpdates()
     }
     
     func deleteCell(cell: UITableViewCell) {
         if let deletionIndexPath = tableView.indexPath(for: cell) {
-            items.remove(at: deletionIndexPath.row)
+            eventName.remove(at: deletionIndexPath.row)
+            eventDescription.remove(at: deletionIndexPath.row)
+            eventDate.remove(at: deletionIndexPath.row)
             tableView.deleteRows(at: [deletionIndexPath], with: .automatic)
         }
     }
