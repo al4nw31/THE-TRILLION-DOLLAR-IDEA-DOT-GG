@@ -11,7 +11,6 @@ import UIKit
 
 class ButtonsView: BaseView {
     
-    var FVC: FirstViewController? = FirstViewController()
     var SVC: SecondViewController? = nil
     
     lazy var likeButton: UIButton = {
@@ -40,7 +39,6 @@ class ButtonsView: BaseView {
     }()
     
     override func setUpViews() {
-        
         addSubview(container)
         
         NSLayoutConstraint.activate([
@@ -53,10 +51,7 @@ class ButtonsView: BaseView {
     
     @objc func like() {
         print("like print")
-        //
         NotificationCenter.default.post(name: NSNotification.Name(rawValue:"insert"), object: nil)
-        //
-        FVC?.insertCell()
     }
     
     @objc func pass() {

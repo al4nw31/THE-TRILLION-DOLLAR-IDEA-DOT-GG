@@ -22,11 +22,12 @@ class Cell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    let nameLabel = LabelFactory.standardLabel(text: "Some event", textColor: .black, fontStyle: .body, textAlignment: .left, sizeToFit: false, adjustToFit: true).new
-    
-    let dateLabel = LabelFactory.standardLabel(text: "Some date", textColor: .black, fontStyle: .body, textAlignment: .left, sizeToFit: false, adjustToFit: true).new
-    
-    let descriptionLabel = LabelFactory.standardLabel(text: "Some description", textColor: .black, fontStyle: .body, textAlignment: .left, sizeToFit: false, adjustToFit: true).new
+    let nameLabel = LabelFactory.standardLabel(text: "Some event", textColor: .black, fontStyle: .headline, textAlignment: .left, sizeToFit: false,
+                                               adjustToFit: true).new
+    let dateLabel = LabelFactory.standardLabel(text: "Some date", textColor: .gray, fontStyle: .subheadline, textAlignment: .left, sizeToFit: false,
+                                               adjustToFit: true).new
+    let descriptionLabel = LabelFactory.standardLabel(text: "Some desc", textColor: .gray, fontStyle: .body, textAlignment: .left, sizeToFit: false,
+                                               adjustToFit: true).new
     
     lazy var deleteButton: UIButton = {
         let button = ButtonFactory.standardButton(title: "Delete", target: self, selector: #selector(deleteAction)).new
