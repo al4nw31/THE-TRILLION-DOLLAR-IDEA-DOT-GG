@@ -12,16 +12,18 @@ import WebKit
 class WebView: BaseView, WKNavigationDelegate {
     
     var webView: WKWebView!
+    //var website: String = ""
     
     override func setUpViews() {
         let webConfiguration = WKWebViewConfiguration()
         webView = WKWebView(frame: UIScreen.main.bounds, configuration: webConfiguration)
         webView.navigationDelegate = self
-        loadWebView()
+        //loadWebView()
     }
     
-    func loadWebView() {
-        if let url = URL(string: "https://goo.gl/forms/rhX1xoczqyr3fn8O2") {
+    func loadWebView(website: String) {
+        print(website)
+        if let url = URL(string: website) {
             webView.load(URLRequest(url: url))
         }
     }

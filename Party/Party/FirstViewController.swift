@@ -9,10 +9,8 @@
 import UIKit
 
 class FirstViewController: UITableViewController {
-
-    var eventName = ["name 1", "name 2", "name 3"]
-    var eventDate = ["date 1", "date 2", "date 3"]
-    var eventDescription = ["desc 1", "desc 2", "desc 3"]
+    
+    var db = Database()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,39 +19,45 @@ class FirstViewController: UITableViewController {
         navigationItem.title = "Your Events"
         tableView.register(Cell.self, forCellReuseIdentifier: "cellId")
 
-        NotificationCenter.default.addObserver(self, selector: #selector(insertCell), name: NSNotification.Name(rawValue: "insert"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(insertCell(_:)), name: NSNotification.Name(rawValue: "insert"), object: nil)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return eventName.count
+        return db.userEventName.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! Cell
-        cell.nameLabel.text = eventName[indexPath.row]
-        cell.dateLabel.text = eventDate[indexPath.row]
-        cell.descriptionLabel.text = eventDescription[indexPath.row]
+        cell.nameLabel.text = db.userEventName[indexPath.row]
+        cell.dateLabel.text = db.userEventDate[indexPath.row]
+        cell.descriptionLabel.text = db.userEventDescription[indexPath.row]
         cell.FVC = self
         return cell
     }
     
-    var ec = EventCard()
-    
-    @objc func insertCell() {
+    @objc func insertCell(_ notification: NSNotification) {
         print("insert cell print")
-        eventName.append(ec.nameLabel.text!)
-        eventDate.append(ec.dateLabel.text!)
-        eventDescription.append(ec.descriptionLabel.text!)
+        if let dict = notification.userInfo as NSDictionary? {
+            if let name = dict["name"] as? String {
+                db.userEventName.append(name)
+            }
+            if let date = dict["date"] as? String {
+                db.userEventDate.append(date)
+            }
+            if let description = dict["description"] as? String {
+                db.userEventDescription.append(description)
+            }
+        }
         
-        let insertionIndexPath = IndexPath(row: eventName.count-1, section: 0)
+        let insertionIndexPath = IndexPath(row: db.userEventName.count-1, section: 0)
         tableView.insertRows(at: [insertionIndexPath], with: .automatic)
     }
     
     func deleteCell(cell: UITableViewCell) {
         if let deletionIndexPath = tableView.indexPath(for: cell) {
-            eventName.remove(at: deletionIndexPath.row)
-            eventDate.remove(at: deletionIndexPath.row)
-            eventDescription.remove(at: deletionIndexPath.row)
+            db.userEventName.remove(at: deletionIndexPath.row)
+            db.userEventDate.remove(at: deletionIndexPath.row)
+            db.userEventDescription.remove(at: deletionIndexPath.row)
             tableView.deleteRows(at: [deletionIndexPath], with: .automatic)
         }
     }

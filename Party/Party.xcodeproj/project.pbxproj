@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		102206071FC4F86900797F5E /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102206061FC4F86800797F5E /* WebView.swift */; };
 		10253CD11FC56CB300D9EAC1 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10253CD01FC56CB200D9EAC1 /* MapView.swift */; };
+		1029E9E41FCE71C3003CF013 /* database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1029E9E31FCE71C3003CF013 /* database.swift */; };
 		107033AC1FBD0FC4007CC090 /* TabFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107033AB1FBD0FC4007CC090 /* TabFactory.swift */; };
 		107C51111FB9898F002E93CD /* LabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107C51101FB9898F002E93CD /* LabelFactory.swift */; };
 		107C51131FB98A63002E93CD /* ButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107C51121FB98A63002E93CD /* ButtonFactory.swift */; };
@@ -107,6 +108,7 @@
 /* Begin PBXFileReference section */
 		102206061FC4F86800797F5E /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		10253CD01FC56CB200D9EAC1 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		1029E9E31FCE71C3003CF013 /* database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = database.swift; sourceTree = "<group>"; };
 		107033AB1FBD0FC4007CC090 /* TabFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabFactory.swift; sourceTree = "<group>"; };
 		107C51101FB9898F002E93CD /* LabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFactory.swift; sourceTree = "<group>"; };
 		107C51121FB98A63002E93CD /* ButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactory.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				89F6E74E1F9EDE4E00E7E7D3 /* SecondViewController.swift */,
 				107C511C1FB98FB5002E93CD /* Swipeable.swift */,
 				E70F91261F9ED4B000B6A84D /* FirstViewController.swift */,
+				1029E9E31FCE71C3003CF013 /* database.swift */,
 				102206061FC4F86800797F5E /* WebView.swift */,
 				10EC53401FC3E50900CF40BC /* Cell.swift */,
 				E70F912B1F9ED4B000B6A84D /* Assets.xcassets */,
@@ -428,6 +431,7 @@
 				E70F91271F9ED4B000B6A84D /* FirstViewController.swift in Sources */,
 				10EC53411FC3E50900CF40BC /* Cell.swift in Sources */,
 				107C51151FB98A9A002E93CD /* ImageViewFactory.swift in Sources */,
+				1029E9E41FCE71C3003CF013 /* database.swift in Sources */,
 				10253CD11FC56CB300D9EAC1 /* MapView.swift in Sources */,
 				107C51111FB9898F002E93CD /* LabelFactory.swift in Sources */,
 				107C511B1FB98D31002E93CD /* ButtonsView.swift in Sources */,

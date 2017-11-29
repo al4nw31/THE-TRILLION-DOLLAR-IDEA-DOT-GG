@@ -19,7 +19,7 @@ class MapView: BaseView {
         annotation = MKPointAnnotation()
         let initialLocation = CLLocation(latitude: 37.3351916, longitude: -121.8832602)
         centerMapOnLocation(location: initialLocation)
-        addAnnotation()
+        //addMarker()
     }
     
     let regionRadius: CLLocationDistance = 1200
@@ -29,9 +29,12 @@ class MapView: BaseView {
         mapView.setRegion(coordinateRegion, animated: true)
     }
 
-    func addAnnotation() {
-        annotation.coordinate = CLLocationCoordinate2D(latitude: 37.3351916, longitude: -121.8832602)
+    func addMarker(lat: Double, lon: Double) {
+        annotation.coordinate = CLLocationCoordinate2D(latitude: lat, longitude: lon)
         mapView.addAnnotation(annotation)
     }
     
+    func removeAnnotation() {
+        mapView.removeAnnotation(annotation)
+    }
 }

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class SecondViewController: UIViewController {
-
+    
     lazy var eventCard: EventCard = {
         let ec = EventCard()
         ec.SVC = self
@@ -30,6 +30,8 @@ class SecondViewController: UIViewController {
         navigationItem.title = "Events"
         view.backgroundColor = .white
         setUpViews()
+        eventCard.eventWebsite = buttonsContainer.db.eventWebsite[buttonsContainer.db.count]
+        changeCard(buttonsContainer.db.eventName[buttonsContainer.db.count], buttonsContainer.db.eventDate[buttonsContainer.db.count], buttonsContainer.db.eventDescription[buttonsContainer.db.count], buttonsContainer.db.eventUIImage[buttonsContainer.db.count])
     }
     
     func setUpViews() {
@@ -48,6 +50,13 @@ class SecondViewController: UIViewController {
             ])
     }
     
+    func changeCard(_ name: String, _ date: String, _ desc: String, _ image: UIImage) {
+        eventCard.nameLabel.text = name
+        eventCard.dateLabel.text = date
+        eventCard.descriptionLabel.text = desc
+        eventCard.eventImageView.image = image
+    }
+
     @objc func swipeCard(sender: UIPanGestureRecognizer) {
         sender.swipeView(eventCard)
     }

@@ -13,7 +13,15 @@ class EventCard: BaseView {
     
     var SVC: SecondViewController? = nil
     
-    let eventImageView = ImageViewFactory.standardImageView(image: #imageLiteral(resourceName: "ssbm"), cornerRadius: 0, interactionEnabled: true, contentMode: .scaleAspectFill, sizeToFit: false).new
+    var eventWebsite: String = ""
+    
+    let nameLabel = LabelFactory.standardLabel(text: "Some name", textColor: .gray, fontStyle: .headline, textAlignment: .left, sizeToFit: true, adjustToFit: true).new
+    
+    let dateLabel = LabelFactory.standardLabel(text: "Some date", textColor: .gray, fontStyle: .subheadline, textAlignment: .left, sizeToFit: true, adjustToFit: true).new
+    
+    let descriptionLabel = LabelFactory.standardLabel(text: "Some desc", textColor: .gray, fontStyle: .subheadline, textAlignment: .left, sizeToFit: true, adjustToFit: true).new
+    
+    let eventImageView = ImageViewFactory.standardImageView(image: #imageLiteral(resourceName: "no-events"), cornerRadius: 0, interactionEnabled: true, contentMode: .scaleAspectFill, sizeToFit: false).new
     
     lazy var websiteButton: UIButton = {
         let b = ButtonFactory.buttonWithImage(image: #imageLiteral(resourceName: "friendsIcon"), cornerRadius: 0, target: self, selector: #selector(website), sizeToFit: true).new
@@ -24,6 +32,7 @@ class EventCard: BaseView {
     
     @objc func website() {
         print("website print")
+        wv.loadWebView(website: eventWebsite)
         SVC?.view.addSubview(wv.webView)
         let backButton = UIBarButtonItem(title: NSLocalizedString("Back", comment: "Back"), style: .plain, target: self, action: #selector(popWebView))
         SVC?.navigationItem.setLeftBarButton(backButton, animated: false)
@@ -31,6 +40,7 @@ class EventCard: BaseView {
     
     @objc func popWebView() {
         print("webview popped")
+        wv.webView.stopLoading()
         SVC?.navigationItem.setLeftBarButton(nil, animated: false)
         wv.webView.removeFromSuperview()
     }
@@ -49,12 +59,6 @@ class EventCard: BaseView {
         let v = BaseView()
         return v
     }()
-    
-    let nameLabel = LabelFactory.standardLabel(text: "Four Stock Fridays - SSBM Weekly", textColor: .gray, fontStyle: .headline, textAlignment: .left, sizeToFit: true, adjustToFit: true).new
-    
-    let dateLabel = LabelFactory.standardLabel(text: "6:00 PM Every Friday", textColor: .gray, fontStyle: .subheadline, textAlignment: .left, sizeToFit: true, adjustToFit: true).new
-    
-    let descriptionLabel = LabelFactory.standardLabel(text: "ENGR Room 343", textColor: .gray, fontStyle: .subheadline, textAlignment: .left, sizeToFit: true, adjustToFit: true).new
     
     override func setUpViews() {
         
