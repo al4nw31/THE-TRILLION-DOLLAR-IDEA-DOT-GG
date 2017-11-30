@@ -12,13 +12,11 @@ import WebKit
 class WebView: BaseView, WKNavigationDelegate {
     
     var webView: WKWebView!
-    //var website: String = ""
     
     override func setUpViews() {
         let webConfiguration = WKWebViewConfiguration()
         webView = WKWebView(frame: UIScreen.main.bounds, configuration: webConfiguration)
         webView.navigationDelegate = self
-        //loadWebView()
     }
     
     func loadWebView(website: String) {

@@ -16,9 +16,9 @@ import UIKit
 struct Database {
     
     // User Saved Events in List: FVC
-    var userEventName = ["name 1", "name 2", "name 3"]
-    var userEventDate = ["date 1", "date 2", "date 3"]
-    var userEventDescription = ["desc 1", "desc 2", "desc 3"]
+    var userEventName: [String] = ["name 1", "name 2", "name 3"]
+    var userEventDate: [String] = ["date 1", "date 2", "date 3"]
+    var userEventDescription: [String] = ["desc 1", "desc 2", "desc 3"]
     
     // Event Cards: SVC
     var eventName: [String] = ["No Events", "PUBG Lan Party", "Collegiate LoL Tryouts", "Four Stock Fridays - SSBM Weekly"]
